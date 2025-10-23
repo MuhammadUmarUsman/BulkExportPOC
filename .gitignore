@@ -1,0 +1,84 @@
+## Ignore Visual Studio temporary files, build results, and cache ##
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results ##
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+[Tt]est[Rr]esults/
+
+## NuGet Packages ##
+*.nupkg
+# The packages folder can be ignored because of package restore
+packages/
+# Uncomment if you have NuGet packages checked in
+# !packages/build/
+
+## Visual Studio Code ##
+.vscode/
+.history/
+*.code-workspace
+
+## Windows image file caches ##
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Backup & Reports ##
+*.bak
+*.tmp
+*.log
+*.tlog
+
+## Resharper & Rider ##
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+## Publish outputs ##
+*.Publish.xml
+publish/
+
+## Entity Framework ##
+*.dbmdl
+*.jfm
+
+## ASP.NET Scaffolding ##
+ScaffoldingReadMe.txt
+
+## Others ##
+*.DS_Store
+*.swp
+*.swo
+*.orig
+*.rej
+
+## Test coverage ##
+*.coverage
+*.coveragexml
+TestResult.xml
+
+## Azure build outputs ##
+csx/
+*.build.csdef
+
+## Temporary generated files ##
+Generated_Code/
+
+## MSBuild binary and log files ##
+*.binlog
+
+## User secrets ##
+secrets.json
+
+## SQLite databases ##
+*.db
+*.sqlite
+*.sqlite3
+
