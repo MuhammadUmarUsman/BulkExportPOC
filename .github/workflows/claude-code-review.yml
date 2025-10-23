@@ -14,7 +14,6 @@ permissions:
 jobs:
   run-claude-review:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,7 +22,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }}
           trigger_phrase: "@claude review"
           prompt: |
             Review this pull request for code quality, maintainability, and potential security issues.
