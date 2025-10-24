@@ -1,0 +1,28 @@
+name: Basic CI Build
+
+on:
+  push:
+    branches:
+      - main
+      - umar/BulkExportPOC 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Print environment info
+        run: |
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+
+      - name: Simulate build process
+        run: |
+          echo "Building project..."
+          sleep 5
+          echo "✅ Build successful!"
