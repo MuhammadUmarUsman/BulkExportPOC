@@ -1,0 +1,30 @@
+name: On PR Creation
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+jobs:
+  on-pr-created:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Print PR Details
+        run: |
+          echo "🎉 A new Pull Request was created!"
+          echo "Repository: ${{ github.repository }}"
+          echo "PR Number: ${{ github.event.pull_request.number }}"
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "Author: ${{ github.event.pull_request.user.login }}"
+          echo "Branch: ${{ github.head_ref }}"
+          echo "Base Branch: ${{ github.base_ref }}"
+
+      - name: Add friendly comment to PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "👋 Thanks @${{ github.event.pull_request.user.login }} for opening this PR! The team will review it soon."
